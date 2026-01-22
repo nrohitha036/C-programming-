@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+struct Student { int id; char name[20]; int marks; };
+
+int main() {
+    struct Student s[3] = {{1,"Alice",85},{2,"Bob",90},{3,"Charlie",78}};
+    int id,i;
+    printf("Enter ID to update: "); scanf("%d",&id);
+    for(i=0;i<3;i++)
+        if(s[i].id==id){
+            printf("New name and marks: "); scanf("%s %d",s[i].name,&s[i].marks);
+            printf("Updated: %d %s %d\n",s[i].id,s[i].name,s[i].marks);
+        }
+}
