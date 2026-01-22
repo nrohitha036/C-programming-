@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float billAmount, discount = 0, finalAmount;
+
+    printf("Enter the bill amount: ");
+    scanf("%f", &billAmount);
+
+    if (billAmount >= 1000) {
+        discount = 0.10 * billAmount; // 10% discount
+        printf("You are eligible for a 10%% discount.\n");
+    } else {
+        printf("No discount applicable.\n");
+    }
+
+    finalAmount = billAmount - discount;
+    printf("Final amount to pay: %.2f\n", finalAmount);
+
+    return 0;
+}
