@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+float calculateBill(float units) {
+    return units * 5;   
+}
+
+int main() {
+    float units, bill;
+
+    printf("Enter units consumed: ");
+    scanf("%f", &units);
+
+    bill = calculateBill(units);
+
+    printf("Total Bill = %.2f\n", bill);
+    return 0;
+}
