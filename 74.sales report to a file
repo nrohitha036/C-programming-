@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct Sale { char item[20]; int quantity; float price; };
+
+int main() {
+    struct Sale s;
+    FILE *f = fopen("sales.txt", "w");
+    if(f == NULL) { printf("Cannot open file\n"); return 1; }
+
+    printf("Enter Item, Quantity, Price: ");
+    scanf("%s %d %f", s.item, &s.quantity, &s.price);
+
+    fprintf(f, "Item: %s\nQuantity: %d\nPrice: %.2f\nTotal: %.2f\n", 
+            s.item, s.quantity, s.price, s.quantity * s.price);
+    fclose(f);
+
+    printf("Sales report saved.\n");
+    return 0;
+}
