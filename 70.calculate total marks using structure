@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct Student {
+    char name[20];
+    int marks1, marks2, marks3;
+    int total;
+};
+
+int main() {
+    struct Student s;
+
+    printf("Enter Name and marks of 3 subjects: ");
+    scanf("%s %d %d %d", s.name, &s.marks1, &s.marks2, &s.marks3);
+
+    s.total = s.marks1 + s.marks2 + s.marks3;
+
+    printf("\nStudent: %s\nTotal Marks: %d\n", s.name, s.total);
+    return 0;
+}
