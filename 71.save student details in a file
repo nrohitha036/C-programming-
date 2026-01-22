@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+struct Student { int id; char name[20]; float marks; };
+
+int main() {
+    struct Student s;
+    FILE *f = fopen("student.txt","w");
+    scanf("%d %s %f", &s.id, s.name, &s.marks);
+    fprintf(f, "%d %s %.2f\n", s.id, s.name, s.marks);
+    fclose(f);
+    printf("Saved to file\n");
+    return 0;
+}
