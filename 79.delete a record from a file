@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    FILE *f = fopen("data.txt","r"), *t = fopen("temp.txt","w");
+    int id, delId; char name[20]; int found=0;
+
+    scanf("%d", &delId);
+    while(fscanf(f,"%d %s",&id,name)!=EOF)
+        if(id!=delId){ fprintf(t,"%d %s\n",id,name); } else found=1;
+
+    fclose(f); fclose(t);
+    remove("data.txt"); rename("temp.txt","data.txt");
+    printf(found?"Deleted\n":"Not found\n");
+    return 0;
+}
