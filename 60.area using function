@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+float area(float l, float b) {
+    return l * b;
+}
+
+int main() {
+    float length, breadth;
+    printf("Enter length and breadth: ");
+    scanf("%f %f", &length, &breadth);
+    printf("Area = %.2f\n", area(length, breadth));
+    return 0;
+}
