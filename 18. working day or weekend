@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char day[20];
+
+    printf("Enter a day of the week: ");
+    scanf("%s", day);
+
+    for (int i = 0; day[i]; i++) {
+        if (day[i] >= 'A' && day[i] <= 'Z') {
+            day[i] = day[i] + 32; // convert to lowercase
+        }
+    }
+
+    if (strcmp(day, "saturday") == 0 || strcmp(day, "sunday") == 0) {
+        printf("%s is a weekend.\n", day);
+    } else if (strcmp(day, "monday") == 0 || strcmp(day, "tuesday") == 0 || 
+               strcmp(day, "wednesday") == 0 || strcmp(day, "thursday") == 0 || 
+               strcmp(day, "friday") == 0) {
+        printf("%s is a working day.\n", day);
+    } else {
+        printf("Invalid day entered.\n");
+    }
+
+    return 0;
+}
