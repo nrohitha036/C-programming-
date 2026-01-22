@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    char name[50];
+    int id;
+    float basic, allowance, deduction;
+
+    printf("Enter Name, ID, Basic, Allowance, Deduction: ");
+    scanf(" %[^\n]s %d %f %f %f", name, &id, &basic, &allowance, &deduction);
+
+    printf("\n--- SALARY SLIP ---\n");
+    printf("Name: %s\nID: %d\nNet Salary: %.2f\n", name, id, basic + allowance - deduction);
+
+    return 0;
+}
