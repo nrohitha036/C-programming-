@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *f = fopen("data.txt", "r");
+    int id, found = 0, searchId;
+    char name[20];
+
+    if(f == NULL) { printf("File not found\n"); return 1; }
+
+    printf("Enter ID to search: ");
+    scanf("%d", &searchId);
+
+    while(fscanf(f, "%d %s", &id, name) != EOF) {
+        if(id == searchId) {
+            printf("Record Found: ID=%d, Name=%s\n", id, name);
+            found = 1;
+            break;
+        }
+    }
+
+    if(!found) printf("Record not found.\n");
+    fclose(f);
+    return 0;
+}
