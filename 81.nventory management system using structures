@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct Item { int id, qty; };
+
+int main() {
+    struct Item it[5]={{1,10},{2,20}};
+    int n=2,i,id;
+
+    printf("Inventory:\n");
+    for(i=0;i<n;i++)
+        printf("%d %d\n",it[i].id,it[i].qty);
+
+    printf("Search ID: ");
+    scanf("%d",&id);
+    for(i=0;i<n;i++)
+        if(it[i].id==id){
+            printf("Found: %d %d\n",it[i].id,it[i].qty);
+            printf("Update Qty: ");
+            scanf("%d",&it[i].qty);
+        }
+
+    printf("Updated Inventory:\n");
+    for(i=0;i<n;i++)
+        printf("%d %d\n",it[i].id,it[i].qty);
+
+    return 0;
+}
