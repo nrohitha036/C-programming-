@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double P, r, t, CI;
+
+    printf("Enter Principal, Rate(%), Time(years): ");
+    scanf("%lf %lf %lf", &P, &r, &t);
+
+    CI = P * pow(1 + r/100, t) - P; 
+
+    printf("Compound Interest: %.2lf\n", CI);
+
+    return 0;
+}
