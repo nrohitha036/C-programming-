@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+struct Patient {
+    int id;
+    char name[20];
+    int age;
+    char disease[20];
+};
+
+int main() {
+    struct Patient p;
+
+    printf("Enter ID, Name, Age, Disease: ");
+    scanf("%d %s %d %s", &p.id, p.name, &p.age, p.disease);
+
+    printf("\nPatient Details:\nID: %d\nName: %s\nAge: %d\nDisease: %s\n", p.id, p.name, p.age, p.disease);
+    return 0;
+}
