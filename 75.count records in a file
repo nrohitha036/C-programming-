@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    FILE *f = fopen("data.txt", "r");
+    char ch;
+    int count = 0;
+
+    if(f == NULL) { printf("File not found\n"); return 1; }
+
+    while((ch = fgetc(f)) != EOF) {
+        if(ch == '\n') count++;
+    }
+
+    fclose(f);
+    printf("Total records: %d\n", count);
+    return 0;
+}
