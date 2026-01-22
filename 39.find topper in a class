@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, topperIndex = 0;
+    float marks[50];
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter marks for student %d: ", i+1);
+        scanf("%f", &marks[i]);
+        if(marks[i] > marks[topperIndex])
+            topperIndex = i;
+    }
+
+    printf("\nTopper is Student %d with %.2f marks\n", topperIndex+1, marks[topperIndex]);
+    return 0;
+}
